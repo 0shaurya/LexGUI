@@ -34,9 +34,11 @@ class Chat:
 			except:
 				print('Error using OpenAI API! Maybe check to see if your API key is valid?')
 		elif self.type_of_model == 2 and self.mistral_api_key != None:
-			client = MistralClient(api_key = mistral_api_key)
+			client = MistralClient(api_key=self.mistral_api_key)
 			try:
-				for chunk in client.chat_stream(model = 'mistral-tiny', messages = self.context):
+				context = [ChatMessage(role=dictionary['role'], content=dictionary['content']) for dictionary in self.context] # Using Mistral's ChatMessage function
+				for chunk in client.chat_stream(model = 'mistral-small', messages = context):
+					print(chunk)
 					if chunk.choices[0].delta.content and self.is_generating:
 						yield chunk.choices[0].delta.content
 					if not self.is_generating:

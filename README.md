@@ -21,6 +21,7 @@ To build:
 3. Install using a tool such as [PyInstaller](https://pyinstaller.org/) or [py2exe](https://www.py2exe.org/).
 ## Future Ideas
  - Implement GPU support via [ExLlamaV2](https://github.com/turboderp/exllamav2).
+ - Add dropdown for OpenAI and Mistral models
  - Add a chat history function.
  - Support Google's API.
  - Add a tokens/sec and context length counter.

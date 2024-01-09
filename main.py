@@ -73,7 +73,7 @@ class Window(QWidget):
 		self.line_edit_2.setVisible(False)
 
 		self.line_edit_3 = QLineEdit()
-		# self.line_edit_3.textChanged.connect(lambda: self.update_api_keys())
+		self.line_edit_3.textChanged.connect(lambda: self.update_api_keys())
 		self.line_edit_3.setFixedWidth(400)
 		self.line_edit_3.setVisible(False)
 
